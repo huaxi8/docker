@@ -71,7 +71,7 @@ services:
   web-nginx-php56:
     hostname: web-nginx-php56
     container_name: web-nginx-php56
-    image: php56:1.0.1
+    image: huaxi8/php56:1.0.1
     links:
       - mysql-server
       - redis-server
@@ -156,7 +156,7 @@ services:
   web-nginx-php72:
     hostname: web-nginx-php72
     container_name: web-nginx-php72
-    image: php72:1.0.1
+    image: huaxi8/php72:1.0.1
     links:
       - mysql-server
       - redis-server
