@@ -2,7 +2,7 @@
 ```
 cd $HOME
 
-git clone https://github.com/MapleJson/Docker-laravel.git docker
+git clone https://github.com/huaxi8/docker.git docker
 ```
 
 ### 生成 docker-compose.yml
