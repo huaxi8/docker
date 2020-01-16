@@ -31,6 +31,8 @@ $HOME/docker/bin/docker-exec 70
 $HOME/docker/bin/docker-exec 71
 
 $HOME/docker/bin/docker-exec 72
+
+$HOME/docker/bin/docker-exec 73
 ```
 
 ### 新增站点配置
