@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]
+then
+    echo 'please input <56|70|71|72>'
+    exit 0
+fi
+
+bash -c "clear && docker exec -it web-nginx-php${1} bash"

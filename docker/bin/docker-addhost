@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [[ $# -ne 2 && $# -ne 3 ]];then
+    echo "Usage : `basename $0` somehost.com /you/app/path [ssl]"
+    exit 4
+fi
+
+echo "127.0.0.1       $1" >> /etc/hosts
+
+echo "$1 host add to /etc/hosts successful!"
+
+touch "${HOME}/docker/nginx/conf.d/${1}.conf"
+
+if [[ $# == 2 ]];
+then
+    templateFile=$HOME/docker/nginx/template.conf
+else
+    templateFile=$HOME/docker/nginx/template-ssl.conf
+fi
+
+cat ${templateFile} | sed s@template.com@"$1"@ | sed s@php_root_template@"$2"@ > $HOME/docker/nginx/conf.d/${1}.conf
+
+if [[ $? -eq 0 ]];then
+	$HOME/docker/bin/docker-nginx
+    echo -e "touch ${1}.conf successful!\nnginx reload successfal!"
+else
+    echo "can't touch ${1}.conf"
+fi
