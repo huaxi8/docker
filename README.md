@@ -35,12 +35,12 @@ $HOME/docker/bin/docker-exec 72
 $HOME/docker/bin/docker-exec 73
 ```
 
-### 新增站点配置
+### 新增项目配置
 ```
 $HOME/docker/bin/docker-addhost example.com project/public
 ```
 
-### 删除站点配置
+### 删除项目配置
 ```
 $HOME/docker/bin/docker-delhost example.com
 ```
